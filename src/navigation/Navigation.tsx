@@ -1,8 +1,8 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import PrivateStack from './stacks/PrivateStack';
-import PublicStack from './stacks/PublicStack';
+import PrivateStack from "./stacks/PrivateStack";
+import PublicStack from "./stacks/PublicStack";
 
 type RootStackParamList = {
   PublicStack: undefined;
