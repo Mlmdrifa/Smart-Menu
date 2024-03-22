@@ -1,13 +1,14 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import PrivateStack from './stacks/PrivateStack';
-import PublicStack from './stacks/PublicStack';
+import PublicStack, { PublicStackParamList } from './stacks/PublicStack';
 
 import { useNavigationTheme } from '@/hooks/useNavigationTheme';
 
 type RootStackParamList = {
-  PublicStack: undefined;
+  // For PublicStackScreens injection in RootStack
+  PublicStack: NavigatorScreenParams<PublicStackParamList>;
   PrivateStack: undefined;
 };
 
@@ -18,7 +19,7 @@ export default function Navigation() {
   const user = false;
   return (
     <NavigationContainer theme={navTheme}>
-      <RootStack.Navigator>
+      <RootStack.Navigator screenOptions={{ headerShown: false }}>
         {user ? (
           <RootStack.Screen name="PrivateStack" component={PrivateStack} />
         ) : (
