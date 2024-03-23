@@ -1,6 +1,6 @@
 import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { fonts } from '@/designs/fonts';
 import Navigation from '@/navigation/Navigation';
@@ -14,11 +14,11 @@ export default function App() {
   }
 
   return (
-    <View style={StyleSheet.absoluteFill}>
+    <SafeAreaProvider>
       <StatusBar style="auto" />
       <ThemeProvider>
         <Navigation />
       </ThemeProvider>
-    </View>
+    </SafeAreaProvider>
   );
 }
