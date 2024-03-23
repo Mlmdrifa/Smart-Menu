@@ -1,6 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
+import ScreenWrapper from '@/components/ScreenWrapper';
 import { useTheme } from '@/hooks/useTheme';
 
 export default function AuthentificationScreen() {
@@ -8,17 +9,12 @@ export default function AuthentificationScreen() {
   const theme = useTheme();
 
   return (
-    <View
-      style={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        flex: 1,
-      }}>
+    <ScreenWrapper>
       <Text
         onPress={() => navigation.navigate('PublicStack', { screen: 'EmailVerification' })}
         style={{ color: theme.text }}>
         Authentification
       </Text>
-    </View>
+    </ScreenWrapper>
   );
 }
