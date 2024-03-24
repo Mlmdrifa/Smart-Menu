@@ -1,14 +1,4 @@
-import { Fonts } from './fonts';
-
-type CustomTextStyle = {
-  fontFamily: Fonts;
-  fontSize: number;
-  lineHeight: number;
-  letterSpacing: number;
-};
-type TextStyles = Record<string, CustomTextStyle>;
-
-export const textStyles: TextStyles = {
+export const textStyles = {
   h1: { fontFamily: 'DMSans-Medium', fontSize: 26, lineHeight: 36, letterSpacing: -0.5 },
   h2: { fontFamily: 'DMSans-Medium', fontSize: 22, lineHeight: 30, letterSpacing: -0.5 },
   h3: { fontFamily: 'Mulish-Bold', fontSize: 22, lineHeight: 30, letterSpacing: 0 },
