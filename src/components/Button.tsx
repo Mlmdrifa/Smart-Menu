@@ -62,6 +62,7 @@ const styles = (theme: Theme) =>
       alignItems: 'center',
       borderRadius: 16,
       gap: 8,
+      flexDirection: 'row',
     },
     primary: { backgroundColor: colors.p600 },
     secondary: {
