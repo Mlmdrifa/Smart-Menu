@@ -36,10 +36,10 @@ export default function AuthentificationScreen() {
             {t('screen.authentification.button.getStarted')}
           </Button>
           <Divider />
-          <Button variant="secondary" onPress={handleLoginWithFacebook}>
+          <Button variant="secondary" onPress={handleLoginWithFacebook} leftIconName="Facebook">
             {t('screen.authentification.button.continueWithFacebook')}
           </Button>
-          <Button variant="secondary" onPress={handleLoginWithGoogle}>
+          <Button variant="secondary" onPress={handleLoginWithGoogle} leftIconName="Google">
             {t('screen.authentification.button.continueWithGoogle')}
           </Button>
         </Box>
