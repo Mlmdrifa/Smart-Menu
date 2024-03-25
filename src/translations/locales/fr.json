@@ -1,3 +1,9 @@
 {
-  "screen.authentification.button.getStarted": "Démarrer"
+  "screen.authentification.title": "Commençons 😁",
+  "screen.authentification.description": "Inscrivez-vous ou connectez-vous pour bénéficier d'une expérience numérique complète dans notre restaurant",
+  "screen.authentification.button.getStarted": "Commencer",
+  "screen.authentification.button.continueWithFacebook": "Continue avec Facebook",
+  "screen.authentification.button.continueWithGoogle": "Continue avec Google",
+  "screen.authentification.button.signUpLater": "S'inscrire plus tard",
+  "screen.authentification.or": "OU"
 }
