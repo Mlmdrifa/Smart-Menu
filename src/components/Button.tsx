@@ -13,9 +13,15 @@ type ButtonVariant = 'primary' | 'secondary' | 'clear';
 interface ButtonProps extends PropsWithChildren {
   variant: ButtonVariant;
   typoVariant?: TextVariant;
+  onPress: () => void;
 }
 
-export default function Button({ children, variant, typoVariant = 'mediumButton' }: ButtonProps) {
+export default function Button({
+  children,
+  variant,
+  typoVariant = 'mediumButton',
+  onPress,
+}: ButtonProps) {
   const theme = useTheme();
   const textColor: Record<ButtonVariant, Colors> = {
     primary: 'n0',
@@ -24,7 +30,7 @@ export default function Button({ children, variant, typoVariant = 'mediumButton'
   };
 
   return (
-    <Pressable style={[styles(theme).container, styles(theme)[variant]]}>
+    <Pressable style={[styles(theme).container, styles(theme)[variant]]} onPress={onPress}>
       <Typo color={textColor[variant]} variant={typoVariant}>
         {children}
       </Typo>
