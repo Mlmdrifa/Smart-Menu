@@ -14,6 +14,7 @@ interface ButtonProps extends PropsWithChildren {
   variant: ButtonVariant;
   typoVariant?: TextVariant;
   onPress: () => void;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -21,6 +22,7 @@ export default function Button({
   variant,
   typoVariant = 'mediumButton',
   onPress,
+  disabled,
 }: ButtonProps) {
   const theme = useTheme();
   const textColor: Record<ButtonVariant, Colors> = {
@@ -30,7 +32,15 @@ export default function Button({
   };
 
   return (
-    <Pressable style={[styles(theme).container, styles(theme)[variant]]} onPress={onPress}>
+    <Pressable
+      disabled={disabled}
+      style={({ pressed }) => [
+        styles(theme).container,
+        styles(theme)[variant],
+        pressed && styles(theme).pressed,
+        disabled && styles(theme).disabled,
+      ]}
+      onPress={onPress}>
       <Typo color={textColor[variant]} variant={typoVariant}>
         {children}
       </Typo>
@@ -55,4 +65,14 @@ const styles = (theme: Theme) =>
       borderWidth: 1,
     },
     clear: {},
+    pressed: {
+      opacity: 0.7,
+      shadowOpacity: 0.34,
+      shadowRadius: 6.27,
+      shadowOffset: {
+        width: 0,
+        height: 5,
+      },
+    },
+    disabled: { opacity: 0.5 },
   });
