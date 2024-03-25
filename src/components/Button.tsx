@@ -1,9 +1,11 @@
 import { PropsWithChildren } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 
+import Icon from './Icon';
 import Typo from './Typo';
 
 import { Colors, colors } from '@/designs/colors';
+import { SVG } from '@/designs/svg';
 import { TextVariant } from '@/designs/text.styles';
 import { useTheme } from '@/hooks/useTheme';
 import { Theme } from '@/providers/ThemeProvider';
@@ -15,6 +17,7 @@ interface ButtonProps extends PropsWithChildren {
   typoVariant?: TextVariant;
   onPress: () => void;
   disabled?: boolean;
+  leftIconName?: SVG;
 }
 
 export default function Button({
@@ -23,6 +26,7 @@ export default function Button({
   typoVariant = 'mediumButton',
   onPress,
   disabled,
+  leftIconName,
 }: ButtonProps) {
   const theme = useTheme();
   const textColor: Record<ButtonVariant, Colors> = {
@@ -41,6 +45,7 @@ export default function Button({
         disabled && styles(theme).disabled,
       ]}
       onPress={onPress}>
+      {leftIconName && <Icon iconName={leftIconName} />}
       <Typo color={textColor[variant]} variant={typoVariant}>
         {children}
       </Typo>
