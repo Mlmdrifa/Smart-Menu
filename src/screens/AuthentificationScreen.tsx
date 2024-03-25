@@ -10,10 +10,14 @@ import Typo from '@/components/Typo';
 export default function AuthentificationScreen() {
   const navigation = useNavigation();
 
-  const handleLogin = useCallback(() => {}, []);
+  const handleStart = useCallback(() => {
+    navigation.navigate('PublicStack', { screen: 'EmailVerification' });
+  }, []);
   const handleLoginWithFacebook = useCallback(() => {}, []);
   const handleLoginWithGoogle = useCallback(() => {}, []);
-  const handleSignUp = useCallback(() => {}, []);
+  const handleLogin = useCallback(() => {
+    navigation.navigate('PublicStack', { screen: 'Login' });
+  }, []);
 
   return (
     <ScreenWrapper>
@@ -25,7 +29,7 @@ export default function AuthentificationScreen() {
           </Typo>
         </Box>
         <Box gap={12}>
-          <Button variant="primary" onPress={handleLogin}>
+          <Button variant="primary" onPress={handleStart}>
             Get Started
           </Button>
           <Divider />
@@ -37,7 +41,7 @@ export default function AuthentificationScreen() {
           </Button>
         </Box>
       </Box>
-      <Button variant="clear" onPress={handleSignUp}>
+      <Button variant="clear" onPress={handleLogin}>
         Sign up later
       </Button>
     </ScreenWrapper>
