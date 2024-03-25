@@ -1,3 +1,9 @@
 {
-  "screen.authentification.button.getStarted": "Get Started"
+  "screen.authentification.title": "Let’s Get Started 😁",
+  "screen.authentification.description": "Sign up or login into to have a full digital experience in our restaurant",
+  "screen.authentification.button.getStarted": "Get Started",
+  "screen.authentification.button.continueWithFacebook": "Continue with Facebook",
+  "screen.authentification.button.continueWithGoogle": "Continue with Google",
+  "screen.authentification.button.signUpLater": "Sign up later",
+  "screen.authentification.or": "Get Started"
 }
