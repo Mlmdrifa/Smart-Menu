@@ -5,5 +5,8 @@
   "screen.authentification.button.continueWithFacebook": "Continue with Facebook",
   "screen.authentification.button.continueWithGoogle": "Continue with Google",
   "screen.authentification.button.signUpLater": "Sign up later",
-  "screen.authentification.or": "Get Started"
+  "screen.authentification.or": "Get Started",
+  "screen.emailVerification.title": "What’s your email? 📨",
+  "screen.emailVerification.description": "We need it to search after your account or create a new one",
+  "screen.emailVerification.cta": "Next"
 }
