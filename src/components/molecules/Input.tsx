@@ -41,7 +41,7 @@ export default function Input({ leftComponent, rightComponent, error, ...props }
       {error && (
         <View style={styles(theme).error}>
           <Typo color="d500" variant="caption3">
-            Error message
+            {error}
           </Typo>
         </View>
       )}
