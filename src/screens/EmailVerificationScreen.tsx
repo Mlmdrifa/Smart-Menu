@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
-import Box from '@/components/Box';
-import Button from '@/components/Button';
-import Input from '@/components/Input';
 import ScreenWrapper from '@/components/ScreenWrapper';
-import Typo from '@/components/Typo';
+import Box from '@/components/atoms/Box';
+import Typo from '@/components/atoms/Typo';
+import Button from '@/components/molecules/Button';
+import Input from '@/components/molecules/Input';
 
 export default function EmailVerificationScreen() {
   const navigation = useNavigation();
