@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 
-import Box from './Box';
-import Typo from './Typo';
+import Box from '../atoms/Box';
+import Typo from '../atoms/Typo';
 
 import { colors } from '@/designs/colors';
 import { useTheme } from '@/hooks/useTheme';
