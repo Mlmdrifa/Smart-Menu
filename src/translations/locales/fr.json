@@ -5,5 +5,8 @@
   "screen.authentification.button.continueWithFacebook": "Continue avec Facebook",
   "screen.authentification.button.continueWithGoogle": "Continue avec Google",
   "screen.authentification.button.signUpLater": "S'inscrire plus tard",
-  "screen.authentification.or": "OU"
+  "screen.authentification.or": "OU",
+  "screen.emailVerification.title": "Quel est votre email ? 📨",
+  "screen.emailVerification.description": "Nous en avons besoin pour rechercher votre compte ou en créer un nouveau",
+  "screen.emailVerification.cta": "Suivant"
 }
