@@ -8,5 +8,6 @@
   "screen.authentification.or": "Get Started",
   "screen.emailVerification.title": "What’s your email? 📨",
   "screen.emailVerification.description": "We need it to search after your account or create a new one",
-  "screen.emailVerification.cta": "Next"
+  "screen.emailVerification.cta": "Next",
+  "form.emailForm.errorMessage": "This must be an email"
 }
