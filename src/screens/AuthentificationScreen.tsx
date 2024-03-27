@@ -2,11 +2,11 @@ import { useNavigation } from '@react-navigation/native';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Box from '@/components/Box';
-import Button from '@/components/Button';
-import Divider from '@/components/Divider';
 import ScreenWrapper from '@/components/ScreenWrapper';
-import Typo from '@/components/Typo';
+import Box from '@/components/atoms/Box';
+import Typo from '@/components/atoms/Typo';
+import Button from '@/components/molecules/Button';
+import Divider from '@/components/molecules/Divider';
 
 export default function AuthentificationScreen() {
   const navigation = useNavigation();

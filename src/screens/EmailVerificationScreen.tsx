@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 
-import Box from '@/components/Box';
-import Button from '@/components/Button';
-import Input from '@/components/Input';
 import ScreenWrapper from '@/components/ScreenWrapper';
-import Typo from '@/components/Typo';
+import Box from '@/components/atoms/Box';
+import Spacer from '@/components/atoms/Spacer';
+import Typo from '@/components/atoms/Typo';
+import EmailForm from '@/components/organisms/EmailForm';
 
 export default function EmailVerificationScreen() {
   const navigation = useNavigation();
@@ -15,17 +15,14 @@ export default function EmailVerificationScreen() {
     <ScreenWrapper>
       <Box ycenter flex gap={40}>
         <Box center gap={14}>
+          <Spacer vertical={72} />
           <Typo variant="h2">{t('screen.emailVerification.title')}</Typo>
           <Typo center variant="body1">
             {t('screen.emailVerification.description')}
           </Typo>
         </Box>
-        <Input placeholder="Email" />
+        <EmailForm />
       </Box>
-      <Box flex />
-      <Button onPress={navigation.goBack} variant="primary">
-        {t('screen.emailVerification.cta')}
-      </Button>
     </ScreenWrapper>
   );
 }

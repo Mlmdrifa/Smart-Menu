@@ -8,5 +8,6 @@
   "screen.authentification.or": "OU",
   "screen.emailVerification.title": "Quel est votre email ? 📨",
   "screen.emailVerification.description": "Nous en avons besoin pour rechercher votre compte ou en créer un nouveau",
-  "screen.emailVerification.cta": "Suivant"
+  "screen.emailVerification.cta": "Suivant",
+  "form.emailForm.errorMessage": "Ceci doit être un email valide"
 }

@@ -1,8 +1,8 @@
 import { PropsWithChildren } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 
-import Icon from './Icon';
-import Typo from './Typo';
+import Icon from '../atoms/Icon';
+import Typo from '../atoms/Typo';
 
 import { Colors, colors } from '@/designs/colors';
 import { SVG } from '@/designs/svg';

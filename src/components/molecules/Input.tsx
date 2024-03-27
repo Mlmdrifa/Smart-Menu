@@ -1,7 +1,7 @@
 import { ReactElement, useCallback, useState } from 'react';
 import { TextInput, StyleSheet, TextInputProps, View } from 'react-native';
 
-import Typo from './Typo';
+import Typo from '../atoms/Typo';
 
 import { colors } from '@/designs/colors';
 import { textStyles } from '@/designs/text.styles';
@@ -41,7 +41,7 @@ export default function Input({ leftComponent, rightComponent, error, ...props }
       {error && (
         <View style={styles(theme).error}>
           <Typo color="d500" variant="caption3">
-            Error message
+            {error}
           </Typo>
         </View>
       )}
