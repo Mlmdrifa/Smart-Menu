@@ -8,6 +8,15 @@
   "screen.authentification.or": "OU",
   "screen.emailVerification.title": "Quel est votre email ? 📨",
   "screen.emailVerification.description": "Nous en avons besoin pour rechercher votre compte ou en créer un nouveau",
-  "screen.emailVerification.cta": "Suivant",
-  "form.emailForm.errorMessage": "Ceci doit être un email valide"
+  "cta.next": "Suivant",
+  "screen.creataAccount.title": "Pour Commencer ! ✌️",
+  "screen.creataAccount.description": "Vous avez l'air d'être nouveau chez nous ! Créez un compte pour une expérience complète.",
+  "form.email.error": "Email invalide",
+  "form.email": "Email",
+  "form.username": "Nom",
+  "form.username.error": "Min 2 caractères",
+  "form.phoneNumber": "Numéro de téléphone",
+  "form.phoneNumber.error": "Numéro de téléphone invalide",
+  "form.password": "Mot de passe",
+  "form.password.error": "Min 8 caractères"
 }
