@@ -52,6 +52,7 @@ export default function Input({ leftComponent, rightComponent, error, ...props }
 const styles = (theme: Theme) =>
   StyleSheet.create({
     container: {
+      minHeight: 54,
       gap: 10,
       borderWidth: 1,
       borderColor: theme.mode === 'light' ? colors.n300 : colors.n600,
