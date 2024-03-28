@@ -1,41 +1,28 @@
-import { Field, Form } from 'houseform';
+import { Form } from 'houseform';
 import { useTranslation } from 'react-i18next';
-import { Alert, View } from 'react-native';
-import { z } from 'zod';
 
 import Box from '../atoms/Box';
 import Button from '../molecules/Button';
-import Input from '../molecules/Input';
+import FormFieldEmail from '../molecules/FormFieldEmail';
 
-export default function EmailForm() {
+interface EmailFormProps {
+  onSubmit: (email: string) => void;
+}
+
+export default function EmailForm({ onSubmit }: EmailFormProps) {
   const { t } = useTranslation();
 
   return (
-    <Form
+    <Form<{ email: string }>
       onSubmit={(values) => {
-        Alert.alert('Form was submitted with: ' + JSON.stringify(values));
+        onSubmit(values.email);
       }}>
       {({ isValid, submit }) => (
         <Box flex>
-          <Field name="email" onChangeValidate={z.string().email(t('form.emailForm.errorMessage'))}>
-            {({ value, setValue, onBlur, errors }) => {
-              return (
-                <View>
-                  <Input
-                    value={value}
-                    onBlur={onBlur}
-                    onChangeText={(text) => setValue(text)}
-                    placeholder="Email"
-                    error={errors[0]}
-                  />
-                </View>
-              );
-            }}
-          </Field>
+          <FormFieldEmail />
           <Box flex />
-
           <Button disabled={!isValid} onPress={submit} variant="primary">
-            {t('screen.emailVerification.cta')}
+            {t('cta.next')}
           </Button>
         </Box>
       )}
