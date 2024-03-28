@@ -1,4 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ScreenWrapper from '@/components/ScreenWrapper';
@@ -11,6 +12,10 @@ export default function EmailVerificationScreen() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
+  const onSubmit = useCallback(() => {
+    navigation.navigate('PublicStack', { screen: 'CreateAccount' });
+  }, []);
+
   return (
     <ScreenWrapper>
       <Box ycenter flex gap={40}>
@@ -21,7 +26,7 @@ export default function EmailVerificationScreen() {
             {t('screen.emailVerification.description')}
           </Typo>
         </Box>
-        <EmailForm />
+        <EmailForm onSubmit={onSubmit} />
       </Box>
     </ScreenWrapper>
   );
