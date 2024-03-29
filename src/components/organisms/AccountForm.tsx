@@ -27,11 +27,13 @@ export default function AccountForm({ onSubmit }: AccountFormProps) {
         onSubmit(values);
       }}>
       {({ isValid, submit }) => (
-        <Box flex gap={40}>
-          <FormFieldUsername />
-          <FormFieldEmail />
-          <FormFieldPhoneNumber />
-          <FormFieldPassword />
+        <Box flex>
+          <Box gap={40}>
+            <FormFieldUsername />
+            <FormFieldEmail />
+            <FormFieldPhoneNumber />
+            <FormFieldPassword />
+          </Box>
           <Box flex />
           <Button disabled={!isValid} onPress={submit} variant="primary">
             {t('cta.next')}

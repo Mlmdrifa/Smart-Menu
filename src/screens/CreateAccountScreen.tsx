@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import ScreenWrapper from '@/components/ScreenWrapper';
 import Box from '@/components/atoms/Box';
+import Spacer from '@/components/atoms/Spacer';
 import Typo from '@/components/atoms/Typo';
 import AccountForm from '@/components/organisms/AccountForm';
 
@@ -32,7 +33,8 @@ export default function CreateAccountScreen() {
 
   return (
     <ScreenWrapper>
-      <Box ycenter gap={40} flex>
+      <Spacer vertical={72} />
+      <Box flex gap={40}>
         <Box center gap={14}>
           <Typo variant="h2">{t('screen.creataAccount.title')}</Typo>
           <Typo center variant="body1">

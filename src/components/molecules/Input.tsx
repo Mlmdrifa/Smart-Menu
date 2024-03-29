@@ -1,5 +1,5 @@
 import { ReactElement, useCallback, useState } from 'react';
-import { TextInput, StyleSheet, TextInputProps, View } from 'react-native';
+import { TextInput, StyleSheet, TextInputProps, View, ViewStyle } from 'react-native';
 
 import Typo from '../atoms/Typo';
 
@@ -9,14 +9,25 @@ import { useTheme } from '@/hooks/useTheme';
 import { Theme } from '@/providers/ThemeProvider';
 
 interface InputProps extends TextInputProps {
-  leftComponent?: ReactElement;
-  rightComponent?: ReactElement;
+  leftIconName?: ReactElement;
+  rightIconName?: ReactElement;
+  secure?: boolean;
   error?: string;
+  containerStyles?: ViewStyle;
 }
 
-export default function Input({ leftComponent, rightComponent, error, ...props }: InputProps) {
+export default function Input({
+  leftIconName,
+  rightIconName,
+  containerStyles,
+  error,
+  secure,
+  ...props
+}: InputProps) {
   const theme = useTheme();
   const [value, setValue] = useState<any>(theme.mode === 'light' ? colors.n300 : colors.n600);
+
+  const borderColor = error ? colors.d500 : value;
 
   const onFocus = useCallback(() => {
     setValue(colors.p200);
@@ -27,8 +38,8 @@ export default function Input({ leftComponent, rightComponent, error, ...props }
 
   return (
     <View>
-      <View style={[styles(theme).container, { borderColor: value }]}>
-        {leftComponent}
+      <View style={[styles(theme).container, { borderColor }]}>
+        {leftIconName}
         <TextInput
           onBlur={onBlur}
           onFocus={onFocus}
@@ -36,10 +47,10 @@ export default function Input({ leftComponent, rightComponent, error, ...props }
           placeholderTextColor={theme.mode === 'light' ? colors.n200 : colors.n600}
           {...props}
         />
-        {rightComponent}
+        {rightIconName}
       </View>
       {error && (
-        <View style={styles(theme).error}>
+        <View>
           <Typo color="d500" variant="caption3">
             {error}
           </Typo>
@@ -63,6 +74,7 @@ const styles = (theme: Theme) =>
       backgroundColor: theme.mode === 'light' ? colors.n0 : colors.n800,
     },
     inputText: {
+      flex: 1,
       ...textStyles.inputLabelPlaceholder,
       color: theme.mode === 'light' ? colors.n700 : colors.n0,
     },
