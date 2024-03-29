@@ -5,7 +5,7 @@ import Icon from '../atoms/Icon';
 import Typo from '../atoms/Typo';
 
 import { Colors, colors } from '@/designs/colors';
-import { SVG } from '@/designs/svg';
+import { SvgList } from '@/designs/svg';
 import { TextVariant } from '@/designs/text.styles';
 import { useTheme } from '@/hooks/useTheme';
 import { Theme } from '@/providers/ThemeProvider';
@@ -17,7 +17,7 @@ interface ButtonProps extends PropsWithChildren {
   typoVariant?: TextVariant;
   onPress: () => void;
   disabled?: boolean;
-  leftIconName?: SVG;
+  leftIconName?: SvgList;
 }
 
 export default function Button({

@@ -1,9 +1,9 @@
 import { SvgProps } from 'react-native-svg';
 
-import { SVG, svg } from '@/designs/svg';
+import { SvgList, svg } from '@/designs/svg';
 
 interface IconProps extends SvgProps {
-  iconName: SVG;
+  iconName: SvgList;
 }
 
 export default function Icon({ iconName, ...props }: IconProps) {
