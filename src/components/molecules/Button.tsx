@@ -5,6 +5,7 @@ import Icon from '../atoms/Icon';
 import Typo from '../atoms/Typo';
 
 import { Colors, colors } from '@/designs/colors';
+import { layout } from '@/designs/layout';
 import { SvgList } from '@/designs/svg';
 import { TextVariant } from '@/designs/text.styles';
 import { useTheme } from '@/hooks/useTheme';
@@ -56,11 +57,9 @@ export default function Button({
 const styles = (theme: Theme) =>
   StyleSheet.create({
     container: {
-      paddingVertical: 16,
-      paddingHorizontal: 24,
+      ...layout.border,
       justifyContent: 'center',
       alignItems: 'center',
-      borderRadius: 16,
       gap: 8,
       flexDirection: 'row',
     },
