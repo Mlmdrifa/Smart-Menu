@@ -1,20 +1,15 @@
-import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
-import { Pressable } from 'react-native';
+import { RouteProp, useRoute } from '@react-navigation/native';
 
 import ScreenWrapper from '@/components/ScreenWrapper';
 import Box from '@/components/atoms/Box';
-import Icon from '@/components/atoms/Icon';
 import Spacer from '@/components/atoms/Spacer';
 import Typo from '@/components/atoms/Typo';
 import AuthMethodItem from '@/components/molecules/AuthMethodItem';
 import Button from '@/components/molecules/Button';
-import { useTheme } from '@/hooks/useTheme';
+import NavigationBar from '@/components/organisms/NavigationBar';
 import { PublicStackParamList } from '@/navigation/stacks/PublicStack';
 
 export default function VerifyCodeScreen() {
-  const theme = useTheme();
-  const navigation = useNavigation();
-
   const route = useRoute<RouteProp<PublicStackParamList, 'VerifyCode'>>();
   const { email, phoneNumber } = route.params;
   const onSubmit = () => {};
@@ -22,9 +17,7 @@ export default function VerifyCodeScreen() {
   return (
     <ScreenWrapper>
       <Spacer vertical={16} />
-      <Pressable onPress={navigation.goBack}>
-        <Icon iconName="ArrowLeft" stroke={theme.text} />
-      </Pressable>
+      <NavigationBar />
       <Spacer vertical={50} />
       <Box flex>
         <Box gap={14}>
