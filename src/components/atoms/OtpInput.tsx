@@ -6,7 +6,7 @@ import { useTheme } from '@/hooks/useTheme';
 
 type OTPProps = Pick<OtpInputProps, 'onTextChange' | 'onFilled'> & { error?: boolean };
 
-export default function OTPInput({ onTextChange, onFilled, error }: OTPProps) {
+export default function OTPInput({ onTextChange, onFilled }: OTPProps) {
   const theme = useTheme();
 
   const otpTheme = useMemo(() => {

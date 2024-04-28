@@ -6,22 +6,21 @@ import Box from '@/components/atoms/Box';
 import OTPInput from '@/components/atoms/OtpInput';
 import Spacer from '@/components/atoms/Spacer';
 import Typo from '@/components/atoms/Typo';
-import Button from '@/components/molecules/Button';
+// import Button from '@/components/molecules/Button';
 import NavigationBar from '@/components/organisms/NavigationBar';
 import { PublicStackParamList } from '@/navigation/stacks/PublicStack';
 
 export default function OtpScreen() {
   const { t } = useTranslation();
+
   const route = useRoute<RouteProp<PublicStackParamList, 'OtpScreen'>>();
   const { email, phoneNumber } = route.params;
-
-  // const handleVerify = () => {};
 
   return (
     <ScreenWrapper>
       <Spacer vertical={16} />
       <NavigationBar />
-      <Spacer vertical={50} />
+      <Spacer vertical={40} />
       <Box flex>
         <Box gap={14}>
           <Typo center variant="h2">
@@ -31,20 +30,11 @@ export default function OtpScreen() {
             We just sent a 4-digit verification code to {email}. Enter the code in the box below to
             continue.
           </Typo>
-          <Typo variant="body2">
-            We just sent a 4-digit verification code to {phoneNumber}. Enter the code in the box
-            below to continue.
-          </Typo>
           <Typo variant="h1">{email}</Typo>
           <Typo variant="h1">{phoneNumber}</Typo>
           <OTPInput />
           <Typo variant="body2">Didn’t receive a code? Resend Code</Typo>
         </Box>
-        {/* <Box flex />
-
-        <Button variant="primary" onPress={handleVerify}>
-          {t('cta.next')}
-        </Button> */}
       </Box>
     </ScreenWrapper>
   );
