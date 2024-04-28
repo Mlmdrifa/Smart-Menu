@@ -5,6 +5,7 @@ import AuthentificationScreen from '@/screens/AuthentificationScreen';
 import CreateAccountScreen from '@/screens/CreateAccountScreen';
 import EmailVerificationScreen from '@/screens/EmailVerificationScreen';
 import LoginScreen from '@/screens/LoginScreen';
+import OtpScreen from '@/screens/OtpScreen';
 import VerifyCodeScreen from '@/screens/VerifyCodeScreen';
 
 export type PublicStackParamList = {
@@ -12,7 +13,8 @@ export type PublicStackParamList = {
   EmailVerification: undefined;
   Login: undefined;
   CreateAccount: undefined;
-  VerifyCode: { email: string; phoneNumber: string };
+  VerifyCode: { email: string; phoneNumber?: string };
+  OtpScreen: { email: string; phoneNumber: string };
 };
 
 export type PublicStackRoutes<RouteName extends keyof PublicStackParamList> = RouteProp<
@@ -31,6 +33,7 @@ export default function PublicStack() {
       <Public.Screen name="Login" component={LoginScreen} />
       <Public.Screen name="CreateAccount" component={CreateAccountScreen} />
       <Public.Screen name="VerifyCode" component={VerifyCodeScreen} />
+      <Public.Screen name="OtpScreen" component={OtpScreen} />
     </Public.Navigator>
   );
 }

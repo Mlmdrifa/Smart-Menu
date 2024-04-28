@@ -1,4 +1,6 @@
-import { Pressable, StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { useCallback } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
 
 import Box from '../atoms/Box';
 import Icon from '../atoms/Icon';
@@ -14,22 +16,27 @@ interface AuthMethodItemProps {
   onPress: () => void;
 }
 
-export default function AuthMethodItem({ title, value, onPress }: AuthMethodItemProps) {
+export default function AuthMethodItem({ title, value }: AuthMethodItemProps) {
   const theme = useTheme();
+  const navigation = useNavigation();
 
+  const handleVerify = useCallback(() => {
+    navigation.navigate('PublicStack', {
+      screen: 'OtpScreen',
+      params: { email: '', phoneNumber: '' },
+    });
+  }, [navigation]);
   return (
-    <Pressable onPress={onPress}>
-      <View style={styles(theme).container}>
-        <Box horizontal xcenter>
-          <Box gap={12} flex>
-            <Typo variant="h5">{title}</Typo>
-            <Typo variant="body2" color={theme.mode === 'light' ? 'n500' : 'n300'}>
-              {value}
-            </Typo>
-          </Box>
-          <Icon iconName="ArrowRight" stroke={colors.s700} />
+    <Pressable onPress={handleVerify} style={styles(theme).container}>
+      <Box horizontal xcenter>
+        <Box gap={12} flex>
+          <Typo variant="h5">{title}</Typo>
+          <Typo variant="body2" color={theme.mode === 'light' ? 'n500' : 'n300'}>
+            {value}
+          </Typo>
         </Box>
-      </View>
+        <Icon iconName="ArrowRight" stroke={colors.s700} />
+      </Box>
     </Pressable>
   );
 }
