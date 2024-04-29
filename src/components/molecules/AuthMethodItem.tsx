@@ -23,7 +23,7 @@ export default function AuthMethodItem({ title, value }: AuthMethodItemProps) {
   const handleVerify = useCallback(() => {
     navigation.navigate('PublicStack', {
       screen: 'OtpScreen',
-      params: { email: '', phoneNumber: '' },
+      params: { phoneNumber: '' },
     });
   }, [navigation]);
   return (

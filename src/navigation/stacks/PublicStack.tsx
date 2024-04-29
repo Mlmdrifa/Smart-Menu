@@ -13,8 +13,8 @@ export type PublicStackParamList = {
   EmailVerification: undefined;
   Login: undefined;
   CreateAccount: undefined;
-  VerifyCode: { email: string; phoneNumber?: string };
-  OtpScreen: { email: string; phoneNumber: string };
+  VerifyCode: { phoneNumber?: string };
+  OtpScreen: { phoneNumber: string };
 };
 
 export type PublicStackRoutes<RouteName extends keyof PublicStackParamList> = RouteProp<
