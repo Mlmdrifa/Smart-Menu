@@ -18,5 +18,7 @@
   "form.phoneNumber": "Numéro de téléphone",
   "form.phoneNumber.error": "Numéro de téléphone invalide",
   "form.password": "Mot de passe",
-  "form.password.error": "Min 8 caractères"
+  "form.password.error": "Min 8 caractères",
+  "screen.verifyCode.title": "verification du Code ⚡️",
+  "screen.verifyCode.description": "Sélectionnez l'endroit où vous souhaitez recevoir le code de vérification"
 }

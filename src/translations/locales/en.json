@@ -18,5 +18,7 @@
   "form.phoneNumber": "Phone number",
   "form.phoneNumber.error": "invalid phone number",
   "form.password": "Password",
-  "form.password.error": "min 8 characters"
+  "form.password.error": "min 8 characters",
+  "screen.verifyCode.title": "Verify Code ⚡️",
+  "screen.verifyCode.description": "Select where do you want to receive the verification code"
 }
